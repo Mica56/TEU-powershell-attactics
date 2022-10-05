@@ -29,12 +29,9 @@ powershell.exe -Command "IEX ([Text.Encoding]::UNICODE.GetString([Convert]::From
 
 Start-Sleep  -Seconds 2
 
-# Mimic execution of compressed executable. When successfully executed, calculator.exe will open.
+# Mimic execution of compressed executable. 
 Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027/bin/T1027.zip" -OutFile "$env:temp\T1027.zip"
 Expand-Archive -path "$env:temp\T1027.zip" -DestinationPath "$env:temp\temp_T1027.zip\" -Force
-cmd.exe c/ "`"$env:temp\temp_T1027.zip\T1027.exe`""
-
-Start-Sleep  -Seconds 2
 
 # This is an obfuscated PowerShell command which when executed prints "Hello, from PowerShell!". 
 # Example is from the 2021 Threat Detection Report by Red Canary.
@@ -53,7 +50,8 @@ Start-Sleep  -Seconds 2
 # Upon execution, no output will be displayed. Use File Explorer to verify the file was deleted.
 Remove-Item $env:TEMP\vs.png -ErrorAction Ignore
 Remove-Item $env:temp\T1027.zip -ErrorAction Ignore
+Remove-Item $env:TEMP\key.log -ErrorAction Ignore
 
 # Recursively delete a folder in the temporary directory using Powershell. 
 # Upon execution, no output will be displayed. Use File Explorer to verify the folder was deleted.
-Remove-Item -Path $env:temp\temp_T1027.zip -ErrorAction Ignore
+Remove-Item -Path $env:temp\temp_T1027.zip -ErrorAction Ignore 
