@@ -1,4 +1,6 @@
-﻿[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
+# By Threats Experts University
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
 
 # Windows Screen Capture (CopyFromScreen)
 Add-Type -AssemblyName System.Windows.Forms
