@@ -1,4 +1,6 @@
-﻿#T1491.001
+# By Threats Experts University
+ 
+ #T1491.001
 $updateWallpapercode = @' 
 using System.Runtime.InteropServices; 
 namespace Win32{
