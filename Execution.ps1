@@ -1,4 +1,6 @@
-﻿$Action = New-ScheduledTaskAction -Execute "cmd.exe"
+# # By Threats Experts University
+
+$Action = New-ScheduledTaskAction -Execute "cmd.exe"
 $Trigger = New-ScheduledTaskTrigger -AtLogon
 $User = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
 $Set = New-ScheduledTaskSettingsSet
