@@ -1,4 +1,4 @@
-# # By Threats Experts University
+# By Threats Experts University
 
 $Action = New-ScheduledTaskAction -Execute "cmd.exe"
 $Trigger = New-ScheduledTaskTrigger -AtLogon
