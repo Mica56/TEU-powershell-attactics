@@ -1,4 +1,6 @@
-﻿# Changing security protocol to TLS 1.2 to install modules
+﻿# By Threats Experts University
+ 
+ # Changing security protocol to TLS 1.2 to install modules
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 # Attackers need to change the powershell execution policy in order to run their malicious powershell scripts
